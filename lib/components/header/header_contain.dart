@@ -1,7 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 
 class HeaderContain extends StatelessWidget {
   const HeaderContain({Key? key}) : super(key: key);

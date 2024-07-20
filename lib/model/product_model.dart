@@ -1,51 +1,55 @@
-
 class Product {
-  final String image, title;
+  final String image, title, description;
   final int id;
 
   const Product({
-    required this.id, 
-    required this.image, 
-    required this.title, 
+    required this.id,
+    required this.image,
+    required this.title,
+    required this.description,
   });
-
 }
 
 List<Product> products = const [
   Product(
     id: 1,
-    title: "Garden Pizza",
-    image:
-        "https://slicelife.imgix.net/609/photos/original/GardenPizza-Philadelphia-PA-PepperoniPizza-01.jpg?auto=compress&auto=format",
+    title: "Apple",
+    image: "assets/images/apple.jpg",
+    description: "A sweet, edible fruit produced by an apple tree.",
   ),
   Product(
     id: 2,
-    title: "Frying pan pizza",
-    image:
-        "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/frying_pan_pizza_33656_16x9.jpg",
+    title: "Banana",
+    image: "assets/images/banana.jpg",
+    description:
+        "A long, curved fruit that grows in clusters and has soft pulpy flesh and yellow skin when ripe.",
   ),
   Product(
     id: 3,
-    title: "Neapolitan pizza",
-    image:
-        "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/ecaeb2cc-a950-4645-a648-9137305b3287/Derivates/df977b90-193d-49d4-a59d-8dd922bcbf65.jpg",
+    title: "Cherry",
+    image: "assets/images/cherry.jpg",
+    description:
+        "A small, round stone fruit that is typically bright or dark red.",
   ),
   Product(
     id: 4,
-    title: "Margherita Pizza",
-    image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Margherita_-_Five50_Aria.jpg/1024px-Margherita_-_Five50_Aria.jpg",
+    title: "Watermelon",
+    image: "assets/images/watermelon.jpg",
+    description:
+        "The fruit of the date palm, a sweet, dark brown fruit with a single long seed.",
   ),
   Product(
     id: 5,
-    title: "Cheese Pizza",
-    image:
-        "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*",
+    title: "Elderberry",
+    image: "assets/images/apple.jpg",
+    description:
+        "A small, dark purple fruit that grows in clusters and is used to make jams, jellies, and syrups.",
   ),
   Product(
     id: 6,
-    title: "Veg Pizza",
-    image:
-        "https://lh3.googleusercontent.com/G11TE1BHd0RhBLmOHyZNnzuVOHJv8Dqkz_EzEX97C3QNOECB9oPvRXiCSnsYW6hHp9d2bon2jMkbx-7Mbm-hlQTar66mT2KxoEUdePEV=w512-rw",
+    title: "Strawberry",
+    image: "assets/images/strawberry.jpg",
+    description:
+        "A soft fruit with a thin skin that can be eaten fresh or dried.",
   ),
 ];
