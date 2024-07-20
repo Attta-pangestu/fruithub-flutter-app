@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/components/header_section.dart';
+import 'package:fruithub/components/body/body_section.dart';
+import 'package:fruithub/components/header/header_section.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,8 +13,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
         body: SingleChildScrollView(
-            child: SafeArea(child: Column(children: <Widget>[
-              HeaderSection(),
-            ]))));
+            child: SafeArea(
+                child: Column(children: <Widget>[
+      HeaderSection(),
+      BodySection(),
+    ]))));
   }
 }
