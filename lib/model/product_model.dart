@@ -40,7 +40,7 @@ List<Product> products = const [
     id: 5,
     title: "Cheese Pizza",
     image:
-        "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*",
+        "https://lh3.googleusercontent.com/G11TE1BHd0RhBLmOHyZNnzuVOHJv8Dqkz_EzEX97C3QNOECB9oPvRXiCSnsYW6hHp9d2bon2jMkbx-7Mbm-hlQTar66mT2KxoEUdePEV=w512-rw",
   ),
   Product(
     id: 6,
