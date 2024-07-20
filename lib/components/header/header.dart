@@ -19,7 +19,6 @@ class Header extends StatelessWidget {
               },
             ),
           ),
-        Image.asset('assets/images/logo.png', height: 100, width: 100),
         const Text(
           'FruitHub',
           style: TextStyle(
