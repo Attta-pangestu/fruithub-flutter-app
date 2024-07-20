@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fruithub/model/product_model.dart';
+import 'package:fruithub/screens/detail_fruit_screen.dart';
 
 class ProductDetail extends StatelessWidget {
   final Product product;
@@ -12,14 +13,21 @@ class ProductDetail extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailFruitScreen(product: product),
+            ),
+          );
+        },
         child: Column(
           children: [
             Expanded(
                 flex: 1,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
-                  child: Image.asset(product.image, fit: BoxFit.contain,),
+                  child: Image.asset(product.image, fit: BoxFit.cover,),
                 )),
             const SizedBox(
               height: 10,

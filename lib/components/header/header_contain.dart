@@ -53,7 +53,8 @@ class HeaderBody extends StatelessWidget {
         ),
         const Text(
           'Welcome to FruitHub, yout premiere online shop for fruits and vegetables.',
-          style: TextStyle(fontSize: 20, color: Colors.black54),
+          style: TextStyle(fontSize: 20, color: Colors.black54, ) ,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(height: 20),
         Container(
