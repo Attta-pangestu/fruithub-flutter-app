@@ -21,7 +21,7 @@ class BodySection extends StatelessWidget {
             Responsive(
               mobile: ResponsiveListMenu(
                 crossAxisCount: size.width < 690 ? 2 : 3,
-                aspectRatio: size.width < 500 ? 1.3 : 1.1,
+                aspectRatio: size.width < 500 ? .85 : 1.1,
               ),
               desktop: ResponsiveListMenu(
                 crossAxisCount: size.width < 650 ? 2 : 3,
