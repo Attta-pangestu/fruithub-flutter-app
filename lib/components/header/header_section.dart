@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/components/header.dart';
+import 'package:fruithub/components/header/header.dart';
 import 'package:fruithub/components/responsive.dart';
-import 'package:fruithub/components/header_contain.dart';
+import 'package:fruithub/components/header/header_contain.dart';
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({super.key});
@@ -16,7 +16,7 @@ class HeaderSection extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 1230),
           child: Column(children: [
             const Header(),
-            const HeaderContain(),
+            Responsive.isMobile(context) ? const MobileHeaderContain() : const HeaderContain(),
           ]),
         ));
   }

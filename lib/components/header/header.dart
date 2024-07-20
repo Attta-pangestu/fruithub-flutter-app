@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruithub/components/responsive.dart';
-import 'package:fruithub/components/HeaderWebMenu.dart';
+import 'package:fruithub/components/header/HeaderWebMenu.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
