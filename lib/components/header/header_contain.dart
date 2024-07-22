@@ -6,29 +6,34 @@ class HeaderContain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
-        const SizedBox(height: 40),
-        Row(
+        const Column(
           children: [
-            const Expanded(
-              flex: 3,
-              child: HeaderBody(),
+            SizedBox(height: 40),
+            Row(
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: HeaderBody(),
+                )
+              ],
             )
           ],
-        )
+        ),
+        Image.asset('assets/images/fruits.png')
       ],
     );
   }
 }
 
 class MobileHeaderContain extends StatelessWidget {
-  const MobileHeaderContain({Key? key}) : super(key: key);
+  const MobileHeaderContain({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Image.asset('assets/images/pizza2.png'), const HeaderBody()],
+      children: [Image.asset('assets/images/fruits.png'), const HeaderBody()],
     );
   }
 }
@@ -53,7 +58,10 @@ class HeaderBody extends StatelessWidget {
         ),
         const Text(
           'Welcome to FruitHub, yout premiere online shop for fruits and vegetables.',
-          style: TextStyle(fontSize: 20, color: Colors.black54, ) ,
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.black54,
+          ),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 20),
@@ -81,16 +89,16 @@ class HeaderBody extends StatelessWidget {
         SizedBox(
           height: 50,
           child: OutlinedButton(
-            child: Text(
+            onPressed: () {},
+            style:
+                OutlinedButton.styleFrom(backgroundColor: Colors.amberAccent),
+            child: const Text(
               'Order Now',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                   color: Colors.black),
             ),
-            onPressed: () {},
-            style:
-                OutlinedButton.styleFrom(backgroundColor: Colors.amberAccent),
           ),
         ),
         const SizedBox(height: 20),

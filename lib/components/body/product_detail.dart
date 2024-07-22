@@ -3,10 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:fruithub/model/product_model.dart';
 import 'package:fruithub/screens/detail_fruit_screen.dart';
 
-class ProductDetail extends StatelessWidget {
+class ProductDetail extends StatefulWidget {
   final Product product;
   final VoidCallback press;
   const ProductDetail({super.key, required this.press, required this.product});
+
+  @override
+  _ProductDetailState createState() => _ProductDetailState();
+}
+
+class _ProductDetailState extends State<ProductDetail> {
+  bool isFavoriteActive = false;
+  bool isCartActive = false;
 
   @override
   Widget build(BuildContext context) {
@@ -17,29 +25,75 @@ class ProductDetail extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => DetailFruitScreen(product: product),
+              builder: (context) => DetailFruitScreen(product: widget.product),
             ),
           );
         },
-        child: Column(
-          children: [
-            Expanded(
-                flex: 1,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Image.asset(product.image, fit: BoxFit.cover,),
-                )),
-            const SizedBox(
-              height: 10,
-            ),
-            AutoSizeText(
-              product.title,
-              maxLines: 1,
-              minFontSize: 14,
-              style: const TextStyle(fontSize: 15),
-            )
-            
-          ],
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 1,
+                blurRadius: 7,
+                offset: Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.asset(
+                  widget.product.image,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: Icon(
+                      Icons.shopping_cart,
+                      color: isCartActive ? Colors.red : Colors.grey,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        isCartActive = !isCartActive;
+                      });
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.favorite,
+                      color: isFavoriteActive ? Colors.red : Colors.grey,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        isFavoriteActive = !isFavoriteActive;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              AutoSizeText(
+                widget.product.title,
+                maxLines: 1,
+                minFontSize: 14,
+                style: const TextStyle(fontSize: 15),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
         ),
       ),
     );
