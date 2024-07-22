@@ -7,6 +7,9 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int cartNotificationCount = 5; // Dummy count for cart notifications
+    int favoriteNotificationCount = 3; // Dummy count for favorite notifications
+
     return Row(
       children: [
         // Mobile view
@@ -29,21 +32,69 @@ class Header extends StatelessWidget {
         ),
         const Spacer(),
         if (Responsive.isDesktop(context)) const HeaderWebMenu(),
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.deepPurple,
-            elevation: 17,
-            minimumSize: const Size(25, 44),
-          ),
-          child: const Text(
-            'Join',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+        Stack(
+          children: [
+            IconButton(
+              icon: const Icon(Icons.shopping_cart),
+              onPressed: () {},
             ),
-          ),
+            if (cartNotificationCount > 0)
+              Positioned(
+                right: 0,
+                child: Container(
+                  padding: const EdgeInsets.all(1),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  constraints: const BoxConstraints(
+                    minWidth: 12,
+                    minHeight: 12,
+                  ),
+                  child: Text(
+                    '$cartNotificationCount',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 8,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+          ],
+        ),
+        Stack(
+          children: [
+            IconButton(
+              icon: const Icon(Icons.favorite),
+              onPressed: () {},
+            ),
+            if (favoriteNotificationCount > 0)
+              Positioned(
+                right: 0,
+                child: Container(
+                  padding: const EdgeInsets.all(1),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  constraints: const BoxConstraints(
+                    minWidth: 12,
+                    minHeight: 12,
+                  ),
+                  child: Text(
+                    '$favoriteNotificationCount',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 8,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+          ],
         ),
       ],
     );
